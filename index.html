@@ -10,33 +10,87 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="https://exit-row.github.io/background.css">
   <style type="text/css">
- 
+ .intro {
+    width: 100%;
+    height: 100vh;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    top: 0;
+}
+body {
+  width: 100vw;
+    position: relative;
+    top: unset !important;
+    margin: 0 !important;
+}
+
+.intro h1 {
+  font-size: 60px;
+}
+
+.scrolled-down{
+  transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+  transform:translateY(0); transition: all 0.3s ease-in-out;
+}
   </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+
+el_autohide = document.querySelector('.autohide');
+
+navbar_height = document.querySelector('.navbar').offsetHeight;
+document.body.style.paddingTop = navbar_height + 'px';
+
+if(el_autohide){
+  var last_scroll_top = 0;
+  window.addEventListener('scroll', function() {
+        let scroll_top = window.scrollY;
+       if(scroll_top < last_scroll_top) {
+            el_autohide.classList.remove('scrolled-down');
+            el_autohide.classList.add('scrolled-up');
+        }
+        else {
+            el_autohide.classList.remove('scrolled-up');
+            el_autohide.classList.add('scrolled-down');
+        }
+        last_scroll_top = scroll_top;
+  }); 
+}
+}); 
+  </script>
 </head>
 <body>
-  <nav class="navbar sticky-top navbar-expand-lg">
+  <nav class="autohide navbar sticky-top navbar-expand-lg navbar-dark">
     <div class="container-fluid w-75 justify-content-center">
-      <a class="navbar-brand" href="#">Javier Gutierrez</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
         <ul class="navbar-nav mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#">ABOUT</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
+              WORK
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Graphics</a></li>
+              <li><a class="dropdown-item" href="#">Logos</a></li>
+              <li><a class="dropdown-item" href="#">Print</a></li>
+              <li><a class="dropdown-item" href="#">Illustrations</a></li>
+              <li><a class="dropdown-item" href="#">Coding</a></li>
+              <li><a class="dropdown-item" href="#">Photography</a></li>
             </ul>
           </li>
   
@@ -45,6 +99,40 @@
     </div>
   </nav>
 
+  <div class="intro justify-content-center align-items-center flex-column">
+    <h1>JAVIER GUTIERREZ</h1>
+    <h6>select works</h6>
+    <h1><a href="#select-works">⌄</a></h1>
+  </div>
+
+  <div id="select-works" class="container-fluid w-75 justify-content-center">
+    <div class="row text-center">
+
+      <div class="col-lg-4 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+          <img class="img-fluid" src="https://64.media.tumblr.com/10e7a5c875e509ab341d77289ea12a2f/17a95db6f183561e-0a/s500x750/efd421ee7c873905ad6e709a81a298d87ef1927b.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+          <img class="img-fluid" src="https://64.media.tumblr.com/6c32a022c5783c3d77ac02ad7f0e7b4f/17a95db6f183561e-6d/s500x750/68f8d38aab9d006489f2df983cd0597d7c391a1e.jpg" alt="">
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+          <img class="img-fluid" src="https://64.media.tumblr.com/10e7a5c875e509ab341d77289ea12a2f/17a95db6f183561e-0a/s500x750/efd421ee7c873905ad6e709a81a298d87ef1927b.jpg" alt="">
+        </a>
+      </div>
+  
+      <div class="col-lg-4 col-md-4 col-6">
+        <a href="#" class="d-block mb-4 h-100">
+          <img class="img-fluid" src="https://64.media.tumblr.com/6c32a022c5783c3d77ac02ad7f0e7b4f/17a95db6f183561e-6d/s500x750/68f8d38aab9d006489f2df983cd0597d7c391a1e.jpg" alt="">
+        </a>
+      </div>
+    </div>
+  </div>
 
   <div class="background">
     <span></span>
