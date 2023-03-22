@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://exit-row.github.io/jquery-3.6.4.min.js"></script>
-<script src="https://unpkg.com/imagesloaded@5.0.0/imagesloaded.pkgd.min.js"></script>
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 
-<script>
+<script src="https://exit-row.github.io/scripts/jquery-3.6.4.min.js"></script>
+<script src="https://exit-row.github.io/scripts/imagesloaded.pkgd.min.js"></script>
+<script src="https://exit-row.github.io/scripts/masonry.pkgd.min.js"></script>
 
-var $grid = $('.grid').masonry({
-  // options...
-});
-// layout Masonry after each image loads
-$grid.imagesLoaded().progress( function() {
-  $grid.masonry('layout');
-});
-</script>
+
 
 <style>
     * { box-sizing: border-box; }
@@ -89,19 +81,18 @@ body { font-family: sans-serif; }
     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
   </div>
 </div>
-
 <script>
     // external js: masonry.pkgd.js, imagesloaded.pkgd.js
-
-// init Masonry after all images have loaded
-
-$('.grid').masonry({
-  // options
-  itemSelector: '.grid-item',
-  columnWidth: '.grid-sizer',
-  percentPosition: true,
-  gutter: 10
-});
-</script>
+    
+    // init Masonry after all images have loaded
+    var $grid = $('.grid').imagesLoaded( function() {
+      $grid.masonry({
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        columnWidth: '.grid-sizer'
+      }); 
+    });
+    
+    </script>
 
 </body>

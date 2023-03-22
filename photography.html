@@ -15,20 +15,11 @@
     crossorigin="anonymous"></script>
   <link rel="stylesheet" type="text/css" href="https://exit-row.github.io/background.css">
 
-  <script src="https://exit-row.github.io/jquery-3.6.4.min.js"></script>
-  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="https://exit-row.github.io/scripts/jquery-3.6.4.min.js"></script>
+  <script src="https://exit-row.github.io/scripts/imagesloaded.pkgd.min.js"></script>
+  <script src="https://exit-row.github.io/scripts/masonry.pkgd.min.js"></script>
 
-  <script>
-    var $grid = $('.grid').masonry({
-    });
-
-    $grid.imagesLoaded().progress( function() {
-      $grid.masonry('layout');
-    });
-  </script>
-
-  <style type="text/css">
+<style type="text/css">
 
     .scrolled-down {
       transform: translateY(-100%);
@@ -48,24 +39,18 @@
 
     .grid-sizer,
     .grid-item {
-      width: 33.333%;
+      width: 400px;
+      margin: 4px;
     }
 
     .grid-item {
       float: left;
     }
+    .grid-item img {
+      max-width: 100%;
+    }
   
   </style>
-
-  <script>
-    var $grid = $('.grid').imagesLoaded(function () {
-      $grid.masonry({
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        columnWidth: '.grid-sizer'
-      });
-    });
-  </script>
 
 
 </head>
@@ -81,10 +66,10 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">HOME</a>
+          <a class="nav-link" href="https://exit-row.github.io">HOME</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">ABOUT</a>
+          <a class="nav-link" href="https://exit-row.github.io/about">ABOUT</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button"
@@ -92,52 +77,71 @@
             WORK
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Graphics</a></li>
-            <li><a class="dropdown-item" href="#">Logos</a></li>
-            <li><a class="dropdown-item" href="#">Print</a></li>
-            <li><a class="dropdown-item" href="#">Illustrations</a></li>
-            <li><a class="dropdown-item activ" aria-current="page" href="#">Coding</a></li>
-            <li><a class="dropdown-item" href="#">Photography</a></li>
+            <li><a class="dropdown-item" href="https://exit-row.github.io/graphics">Graphics</a></li>
+            <li><a class="dropdown-item" href="https://exit-row.github.io/logos">Logos</a></li>
+            <li><a class="dropdown-item" href="https://exit-row.github.io/print">Print</a></li>
+            <li><a class="dropdown-item" href="https://exit-row.github.io/illustrations">Illustrations</a></li>
+            <li><a class="dropdown-item" href="#">Coding</a></li>
+            <li><a class="dropdown-item active" aria-current="page" href="https://exit-row.github.io/photography">Photography</a></li>
           </ul>
         </li>
-
       </ul>
     </div>
   </div>
 </nav>
 
-    <div class="grid">
+<div class="container-fluid">
+    <div class="grid mx-auto">
       <div class="grid-sizer"></div>
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/17a41af22b80af19f5fc583bc13b25e2/973e1ec2ac6dc669-e4/s1280x1920/7c6198c23b25bfd412b97be900eff1661026f1cc.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/b4d39b9e8ce51c59047052f6dcac8866/973e1ec2ac6dc669-15/s1280x1920/33a410f2e896096ea2c3fc00c2f5446e56e2085a.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/e67599d23e1d1ae14925aaa252774c63/973e1ec2ac6dc669-eb/s1280x1920/677ac110d2c3981ad554700f183d74e49e4fa7da.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/9f6dfea27eed81c5f6aeb6ce99993b75/973e1ec2ac6dc669-fb/s1280x1920/192d91f42402aef19fefe851803aa7ec1018e3f0.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/17a41af22b80af19f5fc583bc13b25e2/973e1ec2ac6dc669-e4/s1280x1920/7c6198c23b25bfd412b97be900eff1661026f1cc.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/0234fb7ee101eda3bd8ee42b986cf823/973e1ec2ac6dc669-80/s1280x1920/59ab394d64cd8dfbdc14c0758e97bd431b761514.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/b4d39b9e8ce51c59047052f6dcac8866/973e1ec2ac6dc669-15/s1280x1920/33a410f2e896096ea2c3fc00c2f5446e56e2085a.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/462fa4a52416d94fa20eb8abf3595ba6/980819b4aecfc944-96/s400x600/e55b3922a56257c8b7a804424c8c8b3addb861d4.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/9f6dfea27eed81c5f6aeb6ce99993b75/973e1ec2ac6dc669-fb/s1280x1920/192d91f42402aef19fefe851803aa7ec1018e3f0.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/09ec43f494a378547afbb8b47c4702d6/973e1ec2ac6dc669-22/s1280x1920/b1d9f2b9adbeef2533c6c0c61bb5794b3720b5ba.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/0234fb7ee101eda3bd8ee42b986cf823/973e1ec2ac6dc669-80/s1280x1920/59ab394d64cd8dfbdc14c0758e97bd431b761514.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/fd6cdb504984d860d74e0c048705f5f0/2ec209338fd3c47d-a8/s1280x1920/c00f517de2e6dd6cfc88ce2155da0d71696acb92.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/462fa4a52416d94fa20eb8abf3595ba6/980819b4aecfc944-96/s400x600/e55b3922a56257c8b7a804424c8c8b3addb861d4.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/e76f2b2a51c0058cb5ddf35a41eb3def/2ec209338fd3c47d-a8/s1280x1920/04e35da92821cb628a2e64a8a4be1593df9c01e6.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/1c25f793f21272a38bdee9a659b09ac4/973e1ec2ac6dc669-84/s1280x1920/70480b180ba6f19a94e2539552de7af7ee765529.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/f34354d87504ec0f8cfc507fe3d24282/2ec209338fd3c47d-1f/s1280x1920/5f13bc58b5407236a499b90a9f332be240dad13d.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/e2d841f540002bd229a4c2f1a5820cce/4dc90d5cc6e2829d-d4/s1280x1920/a48f8e0af95b9d0ab659da83b5058e24b765725d.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/80b3f833787ff7f2ec82e4e75d48e70f/973e1ec2ac6dc669-70/s1280x1920/51012898cd8171d9e1b8be3061e974c549794bc6.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/09ec43f494a378547afbb8b47c4702d6/973e1ec2ac6dc669-22/s1280x1920/b1d9f2b9adbeef2533c6c0c61bb5794b3720b5ba.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/fd6cdb504984d860d74e0c048705f5f0/2ec209338fd3c47d-a8/s1280x1920/c00f517de2e6dd6cfc88ce2155da0d71696acb92.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/e76f2b2a51c0058cb5ddf35a41eb3def/2ec209338fd3c47d-a8/s1280x1920/04e35da92821cb628a2e64a8a4be1593df9c01e6.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/f34354d87504ec0f8cfc507fe3d24282/2ec209338fd3c47d-1f/s1280x1920/5f13bc58b5407236a499b90a9f332be240dad13d.jpg"></div>
     
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/90d1139e860e71d0108171c1b02c0096/2ec209338fd3c47d-89/s1280x1920/f69fa3d75f68a55d5e9b0029feac7fcce70139d7.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/90d1139e860e71d0108171c1b02c0096/2ec209338fd3c47d-89/s1280x1920/f69fa3d75f68a55d5e9b0029feac7fcce70139d7.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/a3f66480f1569b4333734e21b2638ef8/2ec209338fd3c47d-e0/s1280x1920/0dad337e33cbb776c43a521c3b6d00de239f7c6d.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/a3f66480f1569b4333734e21b2638ef8/2ec209338fd3c47d-e0/s1280x1920/0dad337e33cbb776c43a521c3b6d00de239f7c6d.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/e85c6a76ab31685c8c86661e68761221/2ec209338fd3c47d-3d/s1280x1920/d87172f0e298d52806a8b7136ee8baffdc8da526.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/e85c6a76ab31685c8c86661e68761221/2ec209338fd3c47d-3d/s1280x1920/d87172f0e298d52806a8b7136ee8baffdc8da526.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/0b4190d1da4cdebeb075d7259436a410/2ec209338fd3c47d-27/s1280x1920/056b2988c01953be8d05f711b71969b737bf4eba.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/0b4190d1da4cdebeb075d7259436a410/2ec209338fd3c47d-27/s1280x1920/056b2988c01953be8d05f711b71969b737bf4eba.jpg"></div>
 
-      <div class="grid-item"><img class="img-fluid" src="https://64.media.tumblr.com/2dfb7f9a840b0aa358babcb304e6a6a2/2ec209338fd3c47d-d3/s1280x1920/cc96315d66270d7bb04287115c5d4136b9ea3438.jpg"></div>
+      <div class="grid-item"><img src="https://64.media.tumblr.com/2dfb7f9a840b0aa358babcb304e6a6a2/2ec209338fd3c47d-d3/s1280x1920/cc96315d66270d7bb04287115c5d4136b9ea3438.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/de51bd952f30ad5b97cdbd0164745df2/b5ebd555513b62b8-a6/s2048x3072/a09e34b85ee5e5d2582fddc96e04c3a84467f708.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/9cafb3ab5b03dc71ac4feda8ba3f3c8e/50b97e34f91f00bc-1c/s1280x1920/a59f5d14ec06f4fefb49d6aa209b163573c553b2.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/3e072d9fe2474720ddda9573c0bbe23f/50b97e34f91f00bc-82/s1280x1920/b266bfc75be3f42e9fcf6d395ce92e734ba583cf.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/7aee5b5f023fb0f3e081a8ceb537947f/50b97e34f91f00bc-5c/s1280x1920/15ec52824256490d4d9c1733255cdea65c92a39c.jpg"></div>
+
+      <div class="grid-item"><img src="https://64.media.tumblr.com/42da5d9b007e11a70c7d28941bfe4ee1/50b97e34f91f00bc-66/s1280x1920/e94da87d8ee4cb065cca0a07a0f9cec9563c687d.jpg"></div>
     
     </div>
-
+  </div>
 
 
   <div class="background">
@@ -194,12 +198,14 @@
   </div>
 
 </body>
-  <script>
-    $('.grid').masonry({
+<script>
+  var $grid = $('.grid').imagesLoaded( function() {
+    // init Masonry after all images have loaded
+    $grid.masonry({
       itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      percentPosition: true,
-      gutter: 10
+        columnWidth: '.grid-sizer',
+        isFitWidth: true
     });
+  });
   </script>
 </html>
