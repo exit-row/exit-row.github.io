@@ -21,7 +21,6 @@
 
 <style type="text/css">
 
-  <style type="text/css">
  .intro {
     width: 100%;
     height: 100vh;
@@ -36,10 +35,12 @@
 }
 
 body {
-  width: 100vw;
+
     position: relative;
     top: unset !important;
     margin: 0 !important;
+    width:100%;
+  overflow-x:hidden;
 }
 
 .intro h3 {
@@ -61,32 +62,55 @@ body {
 .scrolled-up{
   transform:translateY(0); transition: all 0.3s ease-in-out;
 }
+
+.grid:after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .grid-sizer,
+    .grid-item {
+      width: 400px;
+      margin: 14px;
+    }
+
+    .grid-item {
+      float: left;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      padding: 16px 14px;
+      background: #fff;
+    }
+    .grid-item img {
+      max-width: 100%;
+    }
   </style>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function(){
+        document.addEventListener("DOMContentLoaded", function(){
 
-el_autohide = document.querySelector('.autohide');
+    el_autohide = document.querySelector('.autohide');
 
-navbar_height = document.querySelector('.navbar').offsetHeight;
-document.body.style.paddingTop = navbar_height + 'px';
+    navbar_height = document.querySelector('.navbar').offsetHeight;
+    document.body.style.paddingTop = navbar_height + 'px';
 
-if(el_autohide){
-  var last_scroll_top = 0;
-  window.addEventListener('scroll', function() {
-        let scroll_top = window.scrollY;
-       if(scroll_top < last_scroll_top) {
-            el_autohide.classList.remove('scrolled-down');
-            el_autohide.classList.add('scrolled-up');
-        }
-        else {
-            el_autohide.classList.remove('scrolled-up');
-            el_autohide.classList.add('scrolled-down');
-        }
-        last_scroll_top = scroll_top;
-  }); 
-}
-}); 
+    if(el_autohide){
+      var last_scroll_top = 0;
+      window.addEventListener('scroll', function() {
+            let scroll_top = window.scrollY;
+          if(scroll_top < last_scroll_top) {
+                el_autohide.classList.remove('scrolled-down');
+                el_autohide.classList.add('scrolled-up');
+            }
+            else {
+                el_autohide.classList.remove('scrolled-up');
+                el_autohide.classList.add('scrolled-down');
+            }
+            last_scroll_top = scroll_top;
+      }); 
+    }
+    }); 
   </script>
 </head>
 <body>
@@ -112,7 +136,6 @@ if(el_autohide){
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="https://exit-row.github.io/graphics">Graphics</a></li>
-              <li><a class="dropdown-item" href="https://exit-row.github.io/logos">Logos</a></li>
               <li><a class="dropdown-item" href="https://exit-row.github.io/print">Print</a></li>
               <li><a class="dropdown-item" href="https://exit-row.github.io/illustrations">Illustrations</a></li>
               <li><a class="dropdown-item" href="https://exit-row.github.io/coding">Coding</a></li>
@@ -132,31 +155,32 @@ if(el_autohide){
   </div>
 
   <div id="select-works" class="container-fluid w-75 justify-content-center">
-    <div class="row text-center">
+    <div class="grid mx-auto">
+      <div class="grid-sizer"></div>
 
-      <div class="col-lg-4 col-md-4 col-12">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid" src="https://64.media.tumblr.com/10e7a5c875e509ab341d77289ea12a2f/17a95db6f183561e-0a/s500x750/efd421ee7c873905ad6e709a81a298d87ef1927b.jpg" alt="">
-        </a>
+    <div class="grid-item">
+      <img src="https://64.media.tumblr.com/50accd66777779caa8b07bb1778853d3/tumblr_p1p5qh5zlH1tf0pv3o3_1280.png">
+
+      <div class="row">
+      <div class="col-6">
+          <img src="https://64.media.tumblr.com/ad84ac65654148858380a617ccfbdfd1/tumblr_p1p5qh5zlH1tf0pv3o1_1280.png">
+        </div>
+        <div class="col-6">
+            <img src="https://64.media.tumblr.com/4255f51601ac73e6843d806faaaf8ef5/32ee98160d8fdb04-1f/s1280x1920/7aa59f0c7a0bfe0df0424eadb1ea3da8952dc201.png">
+        </div>
       </div>
 
-      <div class="col-lg-4 col-md-4 col-12">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid" src="https://64.media.tumblr.com/6c32a022c5783c3d77ac02ad7f0e7b4f/17a95db6f183561e-6d/s500x750/68f8d38aab9d006489f2df983cd0597d7c391a1e.jpg" alt="">
-        </a>
-      </div>
+      <p class="lh-sm mt-2">The NBA's Boston Celtics posted a picture of their player, Jaylen Brown, on their Instagram wearing a design I made that's available for purchase on different items via RedBubble.com<br><br><a href="https://www.instagram.com/p/BZ4NHEklMvm/?hl=en&taken-by=celtics">You can see the post here, with the third slide being the picture in reference.</a></p>
+    </div>
 
-      <div class="col-lg-4 col-md-4 col-12">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid" src="https://64.media.tumblr.com/10e7a5c875e509ab341d77289ea12a2f/17a95db6f183561e-0a/s500x750/efd421ee7c873905ad6e709a81a298d87ef1927b.jpg" alt="">
-        </a>
-      </div>
-  
-      <div class="col-lg-4 col-md-4 col-12">
-        <a href="#" class="d-block mb-4 h-100">
-          <img class="img-fluid" src="https://64.media.tumblr.com/6c32a022c5783c3d77ac02ad7f0e7b4f/17a95db6f183561e-6d/s500x750/68f8d38aab9d006489f2df983cd0597d7c391a1e.jpg" alt="">
-        </a>
-      </div>
+    <div class="grid-item">
+      <img src="https://64.media.tumblr.com/4adc078e9380738a3be24886dd29ba1d/ae9f18b423cc38ac-56/s1280x1920/de9de4d3051e10112897f337a668f878e91506ef.png">
+
+      <img src="https://64.media.tumblr.com/f602bf34c0992c4e8cb91a673d7ad81a/ae9f18b423cc38ac-20/s1280x1920/1eca5d104fb51769d298cf3c6765a52e5933bbe7.png">
+
+      <p class="lh-sm mt-2">I had an idea for a joke t-shirt, but I figured it'd be funnier if instead of just Photoshopping it all together and having a pixelated raster image, I would make it from scratch in Illustrator. That way not only would the quality be top-notch but the art style would be consistent.</p>
+    </div>
+
     </div>
   </div>
 
