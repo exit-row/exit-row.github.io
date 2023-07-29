@@ -1,241 +1,1361 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title>Javier Gutierrez - Portfolio</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2202.7">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-    crossorigin="anonymous"></script>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="Content-Style-Type" content="text/css"/>
+  <title>Graphics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="file:///Users/macbook/Documents/GitHub/exit-row.github.io/images/jg.svg">
+
+  <link rel="stylesheet" type="text/css" href="https://thedesignsofjavier.com/scripts/bootstrap-min-5-3-0.css">
   <link rel="stylesheet" type="text/css" href="https://exit-row.github.io/background.css">
 
-  <script src="https://exit-row.github.io/scripts/jquery-3.6.4.min.js"></script>
-  <script src="https://exit-row.github.io/scripts/imagesloaded.pkgd.min.js"></script>
-  <script src="https://exit-row.github.io/scripts/masonry.pkgd.min.js"></script>
+  <script src="https://thedesignsofjavier.com/scripts/bootstrap.bundle.min.js"> </script>
+  <script src="https://thedesignsofjavier.com/scripts/scripts/jquery-3.6.4.min.js"></script>
+  <script src="https://thedesignsofjavier.com/scripts/imagesloaded.pkgd.min.js"></script>
+  <script src="https://thedesignsofjavier.com/scripts/isotope-layout@3.0.6_dist_isotope.pkgd.min.js"></script>
 
-<style type="text/css">
+  <style type="text/css">
+    html, body {
+      overflow-x: hidden;
+      overflow-y: scroll;
+      position: relative;
+      background: #e8ebff;
+    }
 
- .intro {
-    width: 100%;
-    height: 100vh;
-    padding: 0 !important;
-    margin: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2;
-    top: 0;
-    color: #fff;
-}
+    @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
 
-body {
+    .name-title {
+    font-family: 'Philosopher', sans-serif;
+    font-size: 48px;
+    }
 
-    position: relative;
-    top: unset !important;
-    margin: 0 !important;
-    width:100%;
-  overflow-x:hidden;
-}
+    .scrolled-down {
+      transform: translateY(-100%);
+      transition: all 0.3s ease-in-out;
+    }
 
-.intro h3 {
-  font-weight: 200;
-  letter-spacing: .1em;
-}
+    .scrolled-up {
+      transform: translateY(0);
+      transition: all 0.3s ease-in-out;
+    }
 
-.intro h6 {
-  margin-top: 50px;
-}
+    .btn-group>.btn {
+      font-size: 12px;
+      width: 110px;
+      text-transform: lowercase;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      margin-top: -1px;
+    }
 
-#select-works {
-  margin-top: 50px;
-}
+    .grid {
+      margin: 0 auto;
+      display: flex;
+    flex-wrap: wrap;
+    }
 
-.scrolled-down{
-  transform:translateY(-100%); transition: all 0.3s ease-in-out;
-}
-.scrolled-up{
-  transform:translateY(0); transition: all 0.3s ease-in-out;
-}
-
-.grid:after {
+    .grid:after {
       content: '';
       display: block;
       clear: both;
     }
 
-    .grid-sizer,
-    .grid-item {
-      width: 400px;
-      margin: 14px;
+    .grid-container {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 150px;
     }
 
     .grid-item {
-      float: left;
-      border: 1px solid #fff;
+      width: 350px;
+      margin: 10px;
       border-radius: 4px;
-      padding: 16px 14px;
-      background: #fff;
     }
+
+    .grid-item-container {
+      float:left;
+      border-radius: 4px;
+      transition: 0.3s;
+      overflow: hidden;
+      background: #fff;
+      z-index: 1;
+    }
+
+    .grid-item-container:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      transition: all ease-in-out 0.3s;
+      z-index: 2;
+      opacity: 0;
+
+    }
+
+    .grid-item:hover {
+      transition: all ease-in-out 1s;
+    }
+
     .grid-item img {
       max-width: 100%;
+      transition: all ease-in-out 0.6s;
+    }
+
+    .grid-item a {
+      color: #bcf5ff;
+    }
+
+    .more-info {
+      opacity: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      position: absolute;
+      z-index: 3;
+      transition: all ease-in-out 0.3s;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 4px;
+    }
+
+    .more-info h4 {
+      font-size: 26px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .more-info p {
+      font-size: 14px;
+      padding: 0;
+      margin: 0;
+      font-style: italic;
+      color: #fff;
+    }
+
+    .grid-item:hover::before {
+      opacity: 1;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.2);
+      filter: blur(4px);
+     -webkit-filter: blur(4px);
+    }
+
+    .grid-item:hover .more-info {
+      opacity: 1;
+      background: rgb(0 94 255 / 80%);
+      transition: all ease-in-out 0.6s;
+    }
+
+    .coding {
+      width: 650px !important;
+      margin: 0 auto;
+    }
+
+    .coding.grid-item:hover img {
+      transform: unset !important;
+      filter: unset !important;
+      -webkit-filter: unset !important;
+    }
+
+    @media (max-width: 450px) {
+      .grid-item {
+        max-width: 350px;
+      }
+      .coding {
+        max-width: 350px;
+      }
+    }
+    .navbar {
+      background: #004bff;
+    }
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn-group {
+      background: #fff;
+    }
+
+    .btn:hover {
+      background: #004bff;
+    }
+
+    .btn-outline-dark {
+      border-color: #004bff;
+      color: #004bff;
+    }
+
+    .is-checked {
+      background: #004bff;
+      color: #fff;
+    }
+
+    .btn-outline-dark:hover {
+      color: #fff;
+      border-color: #004bff;
     }
   </style>
-
-  <script>
-        document.addEventListener("DOMContentLoaded", function(){
-
-    el_autohide = document.querySelector('.autohide');
-
-    navbar_height = document.querySelector('.navbar').offsetHeight;
-    document.body.style.paddingTop = navbar_height + 'px';
-
-    if(el_autohide){
-      var last_scroll_top = 0;
-      window.addEventListener('scroll', function() {
-            let scroll_top = window.scrollY;
-          if(scroll_top < last_scroll_top) {
-                el_autohide.classList.remove('scrolled-down');
-                el_autohide.classList.add('scrolled-up');
-            }
-            else {
-                el_autohide.classList.remove('scrolled-up');
-                el_autohide.classList.add('scrolled-down');
-            }
-            last_scroll_top = scroll_top;
-      }); 
-    }
-    }); 
-  </script>
 </head>
-<body>
 
-  <nav class="autohide navbar sticky-top navbar-expand-lg navbar-dark">
-    <div class="container-fluid w-75 justify-content-center">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
-        <ul class="navbar-nav mb-2 mb-lg-0">
+<body>
+<div class="fixed-top navigation-bar">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top pt-4 pb-4">
+    <div class="container">
+      <!--IT'S A ME-->
+      <a class="navbar-brand name-title" href="#">JAVIER GUTIERREZ</a>
+
+      <!--Links-->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="https://exit-row.github.io">HOME</a>
+            <a class="nav-link" href="#">HOME</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="https://exit-row.github.io/about">ABOUT</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" aria-current="page" role="button"
-              data-bs-toggle="dropdown" aria-expanded="false">
-              WORK
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="https://exit-row.github.io/graphics">Graphics</a></li>
-              <li><a class="dropdown-item" href="https://exit-row.github.io/print">Print</a></li>
-              <li><a class="dropdown-item" href="https://exit-row.github.io/illustrations">Illustrations</a></li>
-              <li><a class="dropdown-item" href="https://exit-row.github.io/coding">Coding</a></li>
-              <li><a class="dropdown-item" href="https://exit-row.github.io/photography">Photography</a></li>
-            </ul>
+            <a class="nav-link" href="#">ABOUT</a>
           </li>
         </ul>
       </div>
+
+      <!--Mobile-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </nav>
 
-  <div class="intro justify-content-center align-items-center flex-column">
-    <img src="https://exit-row.github.io/images/javier-gutierrez.svg" style="max-width:500px; padding:0px 20px;" alt="Javier Gutierrez">
-    <h3>Visual Designer</h3>
-    <h6>select works</h6>
-    <h1><a href="#select-works" style="text-decoration: none;">v</a></h1>
+<!--Filters-->
+<div class="row">
+  <div class="col-md-12 text-center">
+    <div id="filters" class="btn-group" role="group">
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark is-checked" data-filter="*" aria-pressed="false" autocomplete="off" href="#all">Show All</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".graphics" aria-pressed="false" autocomplete="off" href="#graphics">Graphics</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".data-analytics" aria-pressed="false" autocomplete="off">Data Analytics</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".illustration" aria-pressed="false" autocomplete="off" href="#illustration">Illustration</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".print" aria-pressed="false" autocomplete="off">Print</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".photography" aria-pressed="false" autocomplete="off">Photography</button>
+      <button type="button" onclick="topFunction()" class="btn btn-outline-dark" data-filter=".coding" aria-pressed="false" autocomplete="off">Coding</button>
+    </div>
   </div>
+</div>
+</div>
 
-  <div id="select-works" class="container-fluid w-75 justify-content-center">
-    <div class="grid mx-auto">
-      <div class="grid-sizer"></div>
+<!--Grid-->
+<div class="grid-container">
+  <div class="grid col-sm-12">
 
-    <div class="grid-item">
-      <img src="https://64.media.tumblr.com/50accd66777779caa8b07bb1778853d3/tumblr_p1p5qh5zlH1tf0pv3o3_1280.png">
-
-      <div class="row">
-      <div class="col-6">
-          <img src="https://64.media.tumblr.com/ad84ac65654148858380a617ccfbdfd1/tumblr_p1p5qh5zlH1tf0pv3o1_1280.png">
+    <!--Dropout Bear-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container p-3">
+        <img src="https://64.media.tumblr.com/50accd66777779caa8b07bb1778853d3/tumblr_p1p5qh5zlH1tf0pv3o3_1280.png">
+    
+        <div class="row">
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/ad84ac65654148858380a617ccfbdfd1/tumblr_p1p5qh5zlH1tf0pv3o1_1280.png">
+          </div>
+          <div class="col-6">
+            <img
+              src="https://64.media.tumblr.com/4255f51601ac73e6843d806faaaf8ef5/32ee98160d8fdb04-1f/s1280x1920/7aa59f0c7a0bfe0df0424eadb1ea3da8952dc201.png">
+          </div>
         </div>
-        <div class="col-6">
-            <img src="https://64.media.tumblr.com/4255f51601ac73e6843d806faaaf8ef5/32ee98160d8fdb04-1f/s1280x1920/7aa59f0c7a0bfe0df0424eadb1ea3da8952dc201.png">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>the NBA's Boston Celtics posted a picture of their player, Jaylen Brown, on their Instagram wearing a
+            design I
+            made that's available for purchase on different items via RedBubble.com<br><br>
+            <a href="https://www.instagram.com/p/BZ4NHEklMvm/?hl=en&taken-by=celtics">you can see the post here, with
+              the
+              third slide being the picture in reference</a>
+          </p>
         </div>
       </div>
-
-      <p class="lh-sm mt-2">The NBA's Boston Celtics posted a picture of their player, Jaylen Brown, on their Instagram wearing a design I made that's available for purchase on different items via RedBubble.com<br><br><a href="https://www.instagram.com/p/BZ4NHEklMvm/?hl=en&taken-by=celtics">You can see the post here, with the third slide being the picture in reference.</a></p>
     </div>
 
-    <div class="grid-item">
-      <img src="https://64.media.tumblr.com/4adc078e9380738a3be24886dd29ba1d/ae9f18b423cc38ac-56/s1280x1920/de9de4d3051e10112897f337a668f878e91506ef.png">
-
-      <img src="https://64.media.tumblr.com/f602bf34c0992c4e8cb91a673d7ad81a/ae9f18b423cc38ac-20/s1280x1920/1eca5d104fb51769d298cf3c6765a52e5933bbe7.png">
-
-      <p class="lh-sm mt-2">I had an idea for a joke t-shirt, but I figured it'd be funnier if instead of just Photoshopping it all together and having a pixelated raster image, I would make it from scratch in Illustrator. That way not only would the quality be top-notch but the art style would be consistent.</p>
+    <!--Naruto-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container p-3">
+        <img
+          src="https://64.media.tumblr.com/4adc078e9380738a3be24886dd29ba1d/ae9f18b423cc38ac-56/s1280x1920/de9de4d3051e10112897f337a668f878e91506ef.png">
+        <img
+          src="https://64.media.tumblr.com/f602bf34c0992c4e8cb91a673d7ad81a/ae9f18b423cc38ac-20/s1280x1920/1eca5d104fb51769d298cf3c6765a52e5933bbe7.png">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>i had an idea for a joke t-shirt, but i figured it'd be funnier if instead of just Photoshopping it all
+            together and having a pixelated raster image, I would make it from scratch in Illustrator</p>
+          <p>that way not only would the quality be top-notch but the art style would be consistent</p>
+        </div>
+      </div>
     </div>
 
+    <!--Villages at Magnolia-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/6dbc2d61ee8beaf46a0a685a64819a8c/32ee98160d8fdb04-38/s1280x1920/070e89b2691c3fe4f83549f6155b818d945c9335.jpg">
+        <img
+          src="https://64.media.tumblr.com/d944a6556bb2396a365cd314bf21a3da/32ee98160d8fdb04-ed/s1280x1920/4e37eb42d891d9f7ae671ced90a156c0f9408a03.png">
+        <div class="more-info">
+          <h4>flyer</h4>
+          <p>white border strategically incorporated to reduce costs by not needing bleed/extra cuts</p>
+        </div>
+      </div>
     </div>
+
+    <!--Second Nature-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <div class="more-info">
+          <a href="https://64.media.tumblr.com/539da43dbeef60d51045b4220faf4753/32ee98160d8fdb04-0c/s1280x1920/b505c1c4979d6002e3d0fc0d5fe9e05d733906c0.jpg"
+            class="glightbox" data-description="Album cover concept, photograph and design by me."
+            data-desc-position="bottom">
+          </a>
+        </div>
+    
+        <img
+          src="https://64.media.tumblr.com/539da43dbeef60d51045b4220faf4753/32ee98160d8fdb04-0c/s1280x1920/b505c1c4979d6002e3d0fc0d5fe9e05d733906c0.jpg">
+        <div class="more-info">
+          <h4>album cover</h4>
+          <p>photography, art direction, editing, and design</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--Fireworks - End of July Sale-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/54a6883a22cfc0bd80e149840431860d/tumblr_pv4m9lFMfz1tf0pv3o3_1280.jpg">
+        <div class="more-info">
+          <h4>social media</h4>
+          <p>post for an account with 1.2M followers</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Phi Sigma Rho-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/b09011e26106b8ce3826c0e042a47949/tumblr_p1nl00SUvE1tf0pv3o2_1280.jpg">
+        <img class="mt-2"
+          src="https://64.media.tumblr.com/39a89ee8fba3ba8ef7f623bb0412d9bf/tumblr_p1nl00SUvE1tf0pv3o1_1280.jpg">
+        <div class="more-info">
+          <h4>t-shirt</h4>
+          <p>nothing but vector</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Test Our Tech Support-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <video class="w-100 h-100" playsinline autoplay loop muted>
+          <source src="https://va.media.tumblr.com/tumblr_rska4porTi1tf0pv3_720.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/c7acbac71df73b2ed247d75e888fe300/32ee98160d8fdb04-f7/s1280x1920/caadb7e900c64b39e84701cce14dd978e81734c3.jpg">
+      </div>
+    </div>
+    
+    <!--doxa capital-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/d19e0c4dc50f5c3cd8af82de73ac4a23/tumblr_phea3wmWs41tf0pv3o1_1280.jpg">
+        <img src="https://64.media.tumblr.com/7e25b4f0bd0459c74f47637b69632216/tumblr_phea3wmWs41tf0pv3o2_1280.jpg">
+    
+        <div class="more-info">
+          <h4>logo/branding</h4>
+          <p>for a Washington, DC-based investment firm; 'o' and 'x' resemble the Greek letter Alpha, symbolizing the
+            inception of new investments and opportunities</p>
+        </div>
+        <!--
+    <p class="lh-sm mt-4">Logo for a Washington, DC-based investment firm. I made the 'o' and 'x' resemble the
+    Greek
+    letter Alpha, symbolizing the beginning of a new company as well as the inception of new investments and
+    opportunities.</p>
+    <p class="lh-sm mt-2">And then below you have mock-ups for letterheads, business cards and envelopes.</p> -->
+      </div>
+    </div>
+    
+    <!--Sandal Sale-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/60582124579dc2c11f1c772339c6ef24/4b1abbfb2cfc1b6b-db/s2048x3072/b22b5a43f0a892b7164ea7f4ce757255fa1e8666.jpg">
+      </div>
+    </div>
+    
+    <!--BIMBOX Splash-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/7746713edb643f1ae3b70160db3f46f1/32ee98160d8fdb04-40/s2048x3072/4764bcabf42eabada89f4810c2dc7bb94cdcd594.jpg">
+      </div>
+    </div>
+    
+    <!--Partner of the Year-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <video class="w-100 h-100" playsinline autoplay loop muted>
+          <source src="https://va.media.tumblr.com/tumblr_rslwe7LGXm1tf0pv3_720.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <!--Memphis-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/d77fac65a74209e7769f0f76bb64b12d/1083702a48d7ec3a-c5/s1280x1920/83cf817d5b8ae2b99366b66f1cfe50b66e714d61.jpg">
+    
+        <div class="more-info">
+          <h4>album cover</h4>
+          <p>inspired by the works of Pen & Pixel</p>
+        </div>
+        <!--
+    <p class="lh-sm mt-4">Pen & Pixel was an iconic design firm that designed over 19,000 album covers over a span
+    of 11 years. Although their designs were generally described as gaudy, featuring lots of bling, wild colors
+    and outrageous scenarios, they were one of the defining elements of 90s hip hop - at one point it was rare
+    for a southern artist not to have a cover made by them.</p>
+    
+    <p class="lh-sm mt-2">This single cover was a callback to those designs, but a <i>little</i> more refined.</p>-->
+      </div>
+    </div>
+
+    <!--Queen Bee-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/3386091dfbac6e26a8a826ed980e20a3/tumblr_p1npjwCQLW1tf0pv3o1_1280.jpg">
+      </div>
+    
+      <div class="more-info">
+        <h4>decal/illustration</h4>
+        <p>rustic graphic for a local business</p>
+      </div>
+    </div>
+    
+    <!--Blog Graphics-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/c9167be822aae5070f2941c273ce7f76/d66e02c1835b492b-71/s540x810/61611b5f527bf53de883679b43be5349b37796d7.png">
+        <img
+          src="https://64.media.tumblr.com/24f84897f8b6bcc5594d16ea55896c19/d66e02c1835b492b-14/s540x810/74b15c664f75f1937cc27b132e9597e64119d920.png">
+        <img
+          src="https://64.media.tumblr.com/8bc8bd6e27f2e1db7a06a11101a56371/d66e02c1835b492b-bf/s1280x1920/1cb173db85e578092e428690f6b336a0276200e7.png">
+        <img
+          src="https://64.media.tumblr.com/79344be34b3a4c481f841ade18c2ce28/d66e02c1835b492b-f1/s540x810/a64e3dd64846412506d1c9b51d1ccd34d663a8cc.png">
+        <img
+          src="https://64.media.tumblr.com/80b33a7e5365a5e3a641b4d97f95edc3/d66e02c1835b492b-61/s540x810/534863ef67f456932b5707c812f1fbb21c88b25f.png">
+    
+        <div class="more-info">
+          <h4>graphics, graphics, graphics</h4>
+          <p>constantly churning out graphics for blog posts</p>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!--Remoldables-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/b21721c63962b3a795894176112f0359/tumblr_nwhqmqknTM1tf0pv3o1_1280.jpg">
+        <div class="more-info">
+          <h4>logo</h4>
+          <p>client wanted a logo that represented their product (moldable plastic). Each color
+            pertains to the different available colors and the parts where they blend are to demonstrate
+            the products can be combined/“moldable”</p>
+          <p class="mt-2">usage was relatively controlled so scalability wasn't an issue</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--MCR Splash-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/f57019a3f199de4db0404cb792c378cf/32ee98160d8fdb04-69/s2048x3072/38398a8778c775b94ee665b909e4ce833b6c20e0.jpg">
+      </div>
+    </div>
+    
+    <!--Civil 3D HTML5 Ads-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <video class="w-100 h-100" playsinline autoplay loop muted>
+          <source src="https://va.media.tumblr.com/tumblr_rslvqhazbl1tf0pv3.mp4" type="video/mp4">
+        </video>
+        <img
+          src="https://64.media.tumblr.com/8a38a324cee78b19c2cf056902637359/932bdb1ad39bcd2c-0f/s2048x3072/18d60b81f9cf704114881386c1a8f6fb6093e7f6.png">
+        <div class="more-info">
+          <h4>HTML5 Google Ads</h4>
+        </div>
+      </div>
+    </div>
+    
+    <!--KB - Valentine's Day-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container"><img
+          src="https://64.media.tumblr.com/42e454b591e29fd946cb7bdd43706517/tumblr_pv4m9lFMfz1tf0pv3o2_r1_1280.jpg">
+      </div>
+      <div class="more-info">
+        <h4>social media</h4>
+        <p>post for an account with 1.2M followers</p>
+      </div>
+    </div>
+    
+    
+    <!--There are better things to fill-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <video class="w-100 h-100" playsinline autoplay loop muted>
+          <source src="https://va.media.tumblr.com/tumblr_rska14EJLz1tf0pv3_720.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+    
+    <!--More work than manpower HTML5 Ads-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <video class="w-100 h-100" playsinline autoplay loop muted>
+          <source src="https://va.media.tumblr.com/tumblr_rslvu7Z27Y1tf0pv3.mp4" type="video/mp4">
+        </video>
+        <img
+          src="https://64.media.tumblr.com/d109aafdcb791bdebcf5046283539165/932bdb1ad39bcd2c-21/s2048x3072/60253da0e28ca162967354e0dfb1924cc05e54b4.png">
+        <div class="more-info">
+          <h4>HTML5 Google Ads</h4>
+        </div>
+      </div>
+    </div>
+    
+    <!--KB Birthday Sale-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/10e7a5c875e509ab341d77289ea12a2f/17a95db6f183561e-0a/s1280x1920/2701932c08af5db8713be68af343113ecc8fea3f.jpg">
+      </div>
+      <div class="more-info">
+        <h4>social media</h4>
+        <p>post for an account with 1.2M followers</p>
+      </div>
+    </div>
+    
+    <!--Tulips Hauliday-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/7e3a5e3ca4db3af798e4d815dbf923da/tumblr_phh1ohs1Dx1tf0pv3o1_1280.jpg">
+        <img src="https://64.media.tumblr.com/27b10fd8721de56260e50317840e512f/tumblr_phh1ohs1Dx1tf0pv3o2_1280.jpg">
+        <div class="more-info">
+          <h4>print ad</h4>
+          <p>full-page ad commissioned by Tulips</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Molly Maid-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/c5c68e916641b680e766da14bd703803/tumblr_p1ouao9IK81tf0pv3o1_540.jpg">
+        <img class="mt-2"
+          src="https://64.media.tumblr.com/a76c3e2dd71d20ee849128bcc50ac896/tumblr_p1ouao9IK81tf0pv3o2_1280.jpg">
+        <img class="mt-2"
+          src="https://64.media.tumblr.com/eb01725e4fcb05130ef04a087819ec15/tumblr_p1ouao9IK81tf0pv3o3_1280.jpg">
+        <div class="more-info">
+          <h4>business cards</h4>
+          <p>variations commissioned by Molly Maid of Greater Little Rock and Northwest Arkansas back in 2015</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--ATG Bowling-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/2d85e31186ac3d8a6d2c520b9857cdd1/ae9f18b423cc38ac-08/s1280x1920/90f303a1d3c881ffc776c738257bd4e2e59dbf05.jpg">
+        <div class="more-info">
+          <h4>poster</h4>
+          <p>designed to mimic a vintage poster</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Beary Sweet-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/3a86b3056f8ac3bf6d84aef6f8ff516f/88918783aaa7a2e8-39/s1280x1920/e0ed8633d604bbf0c634af32e84198bfe553caca.jpg">
+        <img
+          src="https://64.media.tumblr.com/4cc2231e8bca8bdf0986d35abb2427ed/88918783aaa7a2e8-1d/s1280x1920/62195da4cfe3fd769d5523e897a5efce75dacc47.jpg">
+        <div class="more-info">
+          <h4>sticker</h4>
+        </div>
+      </div>
+    </div>
+    
+    <!--Tulips May Your Holiday Wishes Come True-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/57ba2268350d9ce36a04d98aab3791ea/tumblr_phh1qeZACS1tf0pv3o2_1280.jpg">
+        <img src="https://64.media.tumblr.com/de415d639da3d79f667cbb718aa8b9c7/tumblr_phh1qeZACS1tf0pv3o1_1280.jpg">
+        <div class="more-info">
+          <h4>print ad</h4>
+          <p>full-page ad commissioned by Tulips</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Blink Once Creative Photography-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/b4ac306c48698b47f06896aba7371d2b/tumblr_pv43ft8V3w1tf0pv3o1_1280.jpg">
+        <img src="https://64.media.tumblr.com/aa94605efa30fca839f1cac49d09ea5c/tumblr_pv43ft8V3w1tf0pv3o2_1280.jpg">
+    
+        <div class="more-info">
+          <h4>business card</h4>
+          <p>Photographer wanted a business card relating to photography so I went with something reflecting
+            the bokeh when shooting at a larger aperture.</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Shine Out-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <div class="row">
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/a3cd9aeb111e8c521059ec7ba3fe9439/tumblr_p9m3wgb2GT1tf0pv3o6_r1_540.jpg">
+            <img src="https://64.media.tumblr.com/59f14094ff82f056060cf5727bc648e9/tumblr_p9m3wgb2GT1tf0pv3o5_r1_540.jpg">
+            <img src="https://64.media.tumblr.com/c43fa739986efb7ee25e11bd7f497bdb/tumblr_p9m3wgb2GT1tf0pv3o4_r1_540.jpg">
+          </div>
+    
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/6952ac69580bb3cef96c6c19a42b389b/tumblr_p9m3wgb2GT1tf0pv3o1_540.jpg">
+            <img src="https://64.media.tumblr.com/fde6150917250a2ff7c55306d01914f0/tumblr_p9m3wgb2GT1tf0pv3o3_540.jpg">
+            <img src="https://64.media.tumblr.com/67cf56c698c8d15bba94a1fb57cad8fa/tumblr_p9m3wgb2GT1tf0pv3o2_540.jpg">
+          </div>
+        </div>
+      </div>
+      <div class="more-info">
+        <h4>t-shirt</h4>
+      </div>
+    </div>
+    
+    <!--bird animation-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/61dd8d523fa134adbf264b391f909c2a/tumblr_nwhrezmRKJ1tf0pv3o1_400.gif">
+        <div class="more-info">
+          <h4>animation</h4>
+          <p>little old-school frame-by-frame animation</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Underrated-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/aa8dc68d94b7d8c7887e1c3f14014820/0194024baac43fa2-35/s1280x1920/e99a5a4f36f54b6ff1f8037fa0b1c24ad4edf272.jpg">
+    
+        <div class="row mt-3">
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/11182f11f45698f902bcd86c4f5b3db1/tumblr_nwhqyomMQd1tf0pv3o2_500.png">
+          </div>
+    
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/e24ebc4bd0a9eec061b156518d605d9b/tumblr_nwhqyomMQd1tf0pv3o1_500.png">
+          </div>
+        </div>
+        <div class="more-info">
+          <h4>t-shirt</h4>
+        </div>
+      </div>
+    </div>
+    
+    <!--Hersey Transport System-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/1e90ba624f98762362a8e7aeaea4b183/tumblr_ph8qvkRRuM1tf0pv3o1_1280.jpg">
+      </div>
+      <div class="more-info">
+        <h4>business card</h4>
+      </div>
+    </div>
+    
+    <!--Dale's Tires-->
+    <div class="grid-item col-lg-4 col-sm-12 print" data-category="print">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/5730a50d150cb8e39615d3a4ef3a02a4/tumblr_ph8qqnjTqQ1tf0pv3o1_1280.jpg">
+      </div>
+      <div class="more-info">
+        <h4>business card</h4>
+      </div>
+    </div>
+    
+    <!--Expect to Win-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/20ac98253e3c2424207b5d7401e7cce2/ae9f18b423cc38ac-82/s1280x1920/71bc1b92cf9cf204b33c99b2921de4bc748780c4.jpg">
+        <div class="more-info">
+          <h4>raster illustration</h4>
+          <p>silly personification of workplace initiative</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--President's Club-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/72d81afd252a38afa094f38eb750b16b/ae9f18b423cc38ac-ed/s540x810/b502868992be07ec340668d7a12bd82874c0249d.png">
+        <img
+          src="https://64.media.tumblr.com/615ff812d3f5107007187475ffb9ff0f/ae9f18b423cc38ac-ed/s540x810/40018c210f9d88328800ca715f9da34425019cd9.png">
+        <img
+          src="https://64.media.tumblr.com/43008bf47df16f370b1d44ba0ac171b1/ae9f18b423cc38ac-8b/s1280x1920/10744e2ee920306702bdb0c60db7cbeec79baaa6.png">
+        <div class="more-info">
+          <h4>vector</h4>
+          <p>different variations</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Owl-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/59602eaed90befaaa5ee6bec7488a321/tumblr_p1ox6oKfgP1tf0pv3o1_1280.jpg">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>what a hoot it was to make
+        </div>
+      </div>
+    </div>
+    
+    <!--Owl Creative Process-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <div class="row">
+          <div class="col"><img
+              src="https://64.media.tumblr.com/9256c3a3e2df64ec1433d01fb1db228e/tumblr_p1owxiu05n1tf0pv3o2_400.jpg">
+          </div>
+          <div class="col"><img
+              src="https://64.media.tumblr.com/7b0f23a6a6949186da118b5da0392985/tumblr_p1owxiu05n1tf0pv3o1_400.jpg">
+          </div>
+          <div class="col"><img
+              src="https://64.media.tumblr.com/8ab1d4088d9301fc449845cc96f1f866/tumblr_p1owxiu05n1tf0pv3o3_400.jpg">
+          </div>
+        </div>
+        <div class="col">
+          <img src="https://64.media.tumblr.com/18551dd0c8befbddf0ebfe33f01aa783/tumblr_p1owxiu05n1tf0pv3o4_640.jpg">
+        </div>
+        <div class="more-info">
+          <h4>illustration</h4>
+          <p>creative process; can't create something make-believe without first understanding the anatomy of the
+            original
+            its based on, right?</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Mockbob-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/e2e3f817a9cb481ac6fce29a8166067b/ae9f18b423cc38ac-0f/s640x960/dfe65bdd1757ff3d935167d6e5ed00146cedb9ac.png">
+        <img
+          src="https://64.media.tumblr.com/e19d4354faeead87a71821d80f0103a2/ae9f18b423cc38ac-fb/s1280x1920/0b32f4d9f95ba961919a366526d12cd2b64b6c79.jpg">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>because sometimes you want a sticker of the hottest meme at the time, but all the screenshots are low
+            quality
+            so you have to remake it</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Cat-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/0616a5f0c5350c97b547884ccfb70695/tumblr_p1nxiyGBoP1tf0pv3o1_640.jpg">
+      </div>
+    </div>
+    
+    <!--Cat with paw up-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/80ef92a53aee5dc05f1d33e2f19016fe/tumblr_p1nxiyGBoP1tf0pv3o3_640.jpg">
+      </div>
+    </div>
+    
+    <!--Mario-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/74f111a150cad2fde0054ba6a672a78c/tumblr_n7fuqiCARa1tf0pv3o1_1280.jpg">
+      </div>
+    </div>
+    
+    <!--West? I thought you said Weast-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/d8bb6dfb2a56537ce0b3b422ca49d6ea/tumblr_n7fupkauik1tf0pv3o1_1280.jpg">
+        <img src="https://64.media.tumblr.com/f43a5c3c6976885acde2404d01e9c35c/tumblr_n7fupkauik1tf0pv3o2_500.jpg">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>updated/remade shot of one of my favorite moments</p>
+          <p>west? i thought you said weast</p>
+        </div>
+      </div>
+    </div>
+    
+    <!--Life Is Better With...-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/b3d4cb4d5daba7699711c285f323b571/tumblr_p1owvc3t9k1tf0pv3o2_640.jpg">
+      </div>
+    </div>
+    
+    <!--Tanning-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/a702753983341cd6758a5079a2a42323/tumblr_n7funbi3tQ1tf0pv3o1_1280.jpg">
+      </div>
+    </div>
+    
+    <!--Jam Out-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/721ad3d97355c5d6f935668dda301ab1/tumblr_n7fpgy95Px1tf0pv3o1_1280.png">
+      </div>
+    </div>
+    
+    <!--Rabbit-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/49f25c462de762f953c906b1e904dd53/tumblr_n7fpg2RMqf1tf0pv3o1_640.png">
+      </div>
+    </div>
+    
+    <!--DSi-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/e4ee49c71068e50c1e29aa2f8ac42a8d/tumblr_n7flmwdF1B1tf0pv3o1_640.png">
+      </div>
+    </div>
+    
+    <!--Popsicle-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/de1c3e9c4fb7f0089482a526a0c704ff/tumblr_n7flqoL76F1tf0pv3o1_1280.png">
+      </div>
+    </div>
+    
+    <!--Brain-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/158e57424e2a4d28f074d68a5751b482/tumblr_n7flrwmTV61tf0pv3o1_1280.jpg">
+      </div>
+    </div>
+    
+    <!--Summer-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/13f6d86da6d80893d2e598353b6e1f19/tumblr_nwhqvlm7jm1tf0pv3o1_1280.png">
+      </div>
+    </div>
+    
+    <!--Puzzle-->
+    <div class="grid-item col-lg-4 col-sm-12 illustration" data-category="illustration">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/e390c98f18d106c2f8f729a2e188cc4f/tumblr_nwhnxcvz2r1tf0pv3o1_1280.png">
+        <div class="more-info">
+          <h4>vector illustration</h4>
+          <p>3D vector graphic; doesn't seem impressive but this was before Illustrator had decent 3D capabilities</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Mountain Bird Design-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/14263cc8d298cd4afc849dc049c58287/tumblr_p1owm220HS1tf0pv3o1_1280.jpg">
+        <img src="https://64.media.tumblr.com/a0d5c0fbdb93d987aeb6da7a4400e1ca/tumblr_p1owm220HS1tf0pv3o2_1280.jpg">
+        <img src="https://64.media.tumblr.com/bdb9836a10dde1929b03b20a20e7af4f/tumblr_p1owm220HS1tf0pv3o3_1280.jpg">
+    
+        <div class="more-info">
+          <h4>art direction</h4>
+          <p>graphics for made in America, art-driven, environmentally conscious, textile business that
+            focused on helping thousands of domestic violence survivors and families who are
+            facing hunger</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Catalog-->
+    <div class="grid-item col-lg-4 col-sm-12 graphics" data-category="graphics">
+      <div class="grid-item-container">
+        <div class="row">
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/84d7dea40b713c1afcc8dbcb8ba688b2/tumblr_pc76fqxfb71tf0pv3o1_540.jpg">
+          </div>
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/b5e673837b78dfe481964f3a17fa09fb/tumblr_pc76fqxfb71tf0pv3o5_540.jpg">
+          </div>
+        </div>
+    
+        <div class="row">
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/a5a91d016330bd46bad4ec60b923a9cd/tumblr_pc76fqxfb71tf0pv3o4_540.jpg">
+          </div>
+    
+          <div class="col-6">
+            <img src="https://64.media.tumblr.com/e564ac8200fe88cf94bcff99dc2d56ac/tumblr_pc76fqxfb71tf0pv3o2_540.jpg">
+          </div>
+        </div>
+    
+        <img src="https://64.media.tumblr.com/b428259b5ab3f9e85a548a41f8ad4f7d/tumblr_pc76fqxfb71tf0pv3o7_640.jpg">
+        <div class="more-info">
+          <h4>photo-editing</h4>
+          <p>catalog images edited to show the products' different colors, PSD file of each image was
+            provided neatly organized layers with each clothing article having its own
+            masked layer that allowed for easy change of color</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Photography-->
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img src="https://64.media.tumblr.com/e67599d23e1d1ae14925aaa252774c63/973e1ec2ac6dc669-eb/s1280x1920/677ac110d2c3981ad554700f183d74e49e4fa7da.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/17a41af22b80af19f5fc583bc13b25e2/973e1ec2ac6dc669-e4/s1280x1920/7c6198c23b25bfd412b97be900eff1661026f1cc.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/b4d39b9e8ce51c59047052f6dcac8866/973e1ec2ac6dc669-15/s1280x1920/33a410f2e896096ea2c3fc00c2f5446e56e2085a.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/9f6dfea27eed81c5f6aeb6ce99993b75/973e1ec2ac6dc669-fb/s1280x1920/192d91f42402aef19fefe851803aa7ec1018e3f0.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/0234fb7ee101eda3bd8ee42b986cf823/973e1ec2ac6dc669-80/s1280x1920/59ab394d64cd8dfbdc14c0758e97bd431b761514.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/462fa4a52416d94fa20eb8abf3595ba6/980819b4aecfc944-96/s400x600/e55b3922a56257c8b7a804424c8c8b3addb861d4.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/1c25f793f21272a38bdee9a659b09ac4/973e1ec2ac6dc669-84/s1280x1920/70480b180ba6f19a94e2539552de7af7ee765529.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/e2d841f540002bd229a4c2f1a5820cce/4dc90d5cc6e2829d-d4/s1280x1920/a48f8e0af95b9d0ab659da83b5058e24b765725d.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/80b3f833787ff7f2ec82e4e75d48e70f/973e1ec2ac6dc669-70/s1280x1920/51012898cd8171d9e1b8be3061e974c549794bc6.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/09ec43f494a378547afbb8b47c4702d6/973e1ec2ac6dc669-22/s1280x1920/b1d9f2b9adbeef2533c6c0c61bb5794b3720b5ba.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/fd6cdb504984d860d74e0c048705f5f0/2ec209338fd3c47d-a8/s1280x1920/c00f517de2e6dd6cfc88ce2155da0d71696acb92.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/e76f2b2a51c0058cb5ddf35a41eb3def/2ec209338fd3c47d-a8/s1280x1920/04e35da92821cb628a2e64a8a4be1593df9c01e6.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/f34354d87504ec0f8cfc507fe3d24282/2ec209338fd3c47d-1f/s1280x1920/5f13bc58b5407236a499b90a9f332be240dad13d.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/90d1139e860e71d0108171c1b02c0096/2ec209338fd3c47d-89/s1280x1920/f69fa3d75f68a55d5e9b0029feac7fcce70139d7.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/a3f66480f1569b4333734e21b2638ef8/2ec209338fd3c47d-e0/s1280x1920/0dad337e33cbb776c43a521c3b6d00de239f7c6d.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/e85c6a76ab31685c8c86661e68761221/2ec209338fd3c47d-3d/s1280x1920/d87172f0e298d52806a8b7136ee8baffdc8da526.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/0b4190d1da4cdebeb075d7259436a410/2ec209338fd3c47d-27/s1280x1920/056b2988c01953be8d05f711b71969b737bf4eba.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/2dfb7f9a840b0aa358babcb304e6a6a2/2ec209338fd3c47d-d3/s1280x1920/cc96315d66270d7bb04287115c5d4136b9ea3438.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/de51bd952f30ad5b97cdbd0164745df2/b5ebd555513b62b8-a6/s2048x3072/a09e34b85ee5e5d2582fddc96e04c3a84467f708.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/9cafb3ab5b03dc71ac4feda8ba3f3c8e/50b97e34f91f00bc-1c/s1280x1920/a59f5d14ec06f4fefb49d6aa209b163573c553b2.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/3e072d9fe2474720ddda9573c0bbe23f/50b97e34f91f00bc-82/s1280x1920/b266bfc75be3f42e9fcf6d395ce92e734ba583cf.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/7aee5b5f023fb0f3e081a8ceb537947f/50b97e34f91f00bc-5c/s1280x1920/15ec52824256490d4d9c1733255cdea65c92a39c.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+  
+    <div class="grid-item col-lg-4 col-sm-12 photography" data-category="photography">
+      <div class="grid-item-container">
+        <img
+          src="https://64.media.tumblr.com/42da5d9b007e11a70c7d28941bfe4ee1/50b97e34f91f00bc-66/s1280x1920/e94da87d8ee4cb065cca0a07a0f9cec9563c687d.jpg">
+        <div class="more-info">
+          <h4>photography</h4>
+        </div>
+      </div>
+    </div>
+
+  <!--Coding-->  
+    <div class="grid-item col-10 border border-dark rounded p-3 m-3 coding">
+      <h2>Problem-Solving featuring Excel and JavaScript</h2>
+    
+      <h5 class="mt-4 text-danger">The issue:</h5>
+      <p>A page was to be created that would feature a list of stores that are currently open. Initially there'd be
+        80-ish stores, but it would be constantly changing/being updated and could reach more than 300. Unfortunately,
+        the data was all stored in an Excel sheet so we couldn't pull the data automatically or anything. Each entry
+        had the State, City, Mall Name, Hours, and URL (among other jargon we didn't need). We would have to take that
+        information and create an accordion that would divide the stores by state and as you'd click on a state it
+        would expand to show all the stores in that state.</p>
+    
+      <p>The Bootstrap version we had was stripped down and didn't contain the carousel presets so we'd have to create
+        it manually as well - also a whole different story on how to get working.</p>
+    
+      <h5 class="mt-4 text-danger">Management's proposed solution:</h5>
+      <p>We split up the stores and manually type up information and code it and then piece it all together. Not only
+        would it take hours, but it would be a hassle each time it would need to be updated.</p>
+    
+      <h5 class="mt-4 text-success">My solution:</h5>
+      <p>I didn't think this was a very good use of our time so I started brainstorming ways to automate or at least
+        make the whole process easier. I knew you could convert a spreadsheet to an HTML table so I figured I'd start
+        there.</p>
+    
+      <p>I copied all the data on the Excel sheet and pasted it into a new document and deleted everything we didn't
+        need. I sorted it by State and created a new column with a function that would grab the URL and the Mall Name
+        and format it as such: &lt;a href=&quot;URL&quot;&gt;MALL NAME&lt;/a&gt;</p>
+    
+      <p>The function ended up looking like this:</p>
+      <p><em>=CHAR(60)&"a"&" " &"href=" & CHAR(34)& B1 &CHAR(34) &CHAR(62) &A1 &CHAR(60)&CHAR(47)&"a"&CHAR(62)</em>
+      </p>
+      <p>In order to escape the characters USCII codes were to be used alongside the CHAR function and combined
+        together using &.</p>
+      <img class="img-fluid"
+        src="https://64.media.tumblr.com/420be6993c2eec001681da21be48dd29/dee5a7c186693129-13/s1280x1920/0afe43ccf2f8b7707002feec33173bb62f629f60.png">
+    
+      <p class="mt-3">I copied the column of newly created a href's and created a new column and pasted only the
+        values and then went and deleted the Mall Name column and the column with the function. I then converted it
+        all to HTML. It was then a matter of Finding and Replacing with the correct info. And although it did beat
+        having to manually type out every entry as it significantly decreased the amount of time it'd take and it
+        removed any human error, it was still a bit time consuming.</p>
+    
+      <p class="mt-5">Here the top part is what the CSV-to-HTML data looked like and the bottom part was the end goal:
+      </p>
+    
+      <img class="img-fluid mt-1"
+        src="https://64.media.tumblr.com/5a32eaf36b22cf035865528e7127b29f/dee5a7c186693129-b1/s1280x1920/61448b31e9963f3a43fd464dde219b819a1d1b58.png"
+        width="500">
+    
+      <h5 class="mt-4 text-success">So I thought, well, what if I use JavaScript?</h5>
+      <p>Initially, I thought about perhaps using Python but admin privileges were required to install an interpreter.
+        Plus, I figured a HMTL with JavaScript saved in a network drive would be easiest of all options as it'd run in
+        a browser.</p>
+    
+      <p>I created an HTML file with two text areas and a Submit button. Pasting the converted HTML text on the left
+        and clicking submit would run a JavaScript function that would output the result instantly in the second text
+        area.</p>
+    
+      <p>I defined variables for each State and what to replace each one with. Using the string.replace method I
+        replaced all the first instances of each state.</p>
+    
+      <p>For example, the first instance of <td>Arkansas</td> was replaced with the part that started from &lt;div
+        class=“accordionWrapper”&gt; and ended with &lt;table class=“data-table”&gt; and it would do this for every
+        State.</p>
+    
+      <p>Then once that was finished, I used the .split(search).join(replace) to remove all the remaining instances of
+        each state. I had to do this as every entry had the State name in it and only one was needed as all the
+        entries would be nested under it. I also had to use a .split(search).join(replace) to replace the href tags
+        and quotation marks that had been converted to HTML character entities.</p>
+    
+      <img class="img-fluid"
+        src="https://64.media.tumblr.com/2a2b4f7ab1d63ae18b6a3b423eece190/dee5a7c186693129-49/s1280x1920/9e2a25d684c97767368adb06a71015cb08f30f66.gif">
+    </div>
+    
+    
+      <div class="grid-item col-8 border border-dark rounded p-3 m-3 coding">
+      <h2>From Graphic to Code</h2>
+      <p>I had made the graphic below in Photoshop and in a moment of curiosity, I wonder if it was possible to
+        recreate the text/border portion with HTML/CSS.</p>
+      <img class="img-fluid"
+        src="https://64.media.tumblr.com/60582124579dc2c11f1c772339c6ef24/4b1abbfb2cfc1b6b-db/s2048x3072/b22b5a43f0a892b7164ea7f4ce757255fa1e8666.jpg">
+    
+      <p class="mt-4">Honestly this is probably how web developers feel when they receive an impractical design to implement, but it was a nice challenge for me. Keep in mind that Internet Explorer had not been killed off yet so it was a NIGHTMARE to design anything remotely creative and still be compatible with it.</p>
+      <div class="row">
+        <h5 class="mt-4 text-success">Result:</h5>
+    
+        <div class="col-6 col-10">
+          <img class="img-fluid"
+            src="https://64.media.tumblr.com/8ab112b3a080a67c4fb01794b12f160b/01cc908ae40817a6-68/s2048x3072/0c9e1142d2445c22d355b471cec39027ed163457.png">
+        </div><br>
+    
+        <div class="col-6 col-10">
+          <img class="img-fluid"
+            src="https://64.media.tumblr.com/ee630a8fd33cfdc0919d0f1bc20b2cd4/01cc908ae40817a6-1a/s2048x3072/938c2ca1d5544b7a1e31859e32853787a93ea81a.png">
+        </div>
+      </div>
+    
+      <p class="mt-4">For the top border I created a psuedo border using ::before and ::after</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/91a9581d715986145a8c55b467386842/f9c6d48646d30e07-0e/s1280x1920/549c99a86a04113aba3567875951352098a56f8f.png" width="400">
+    
+      <p class="mt-5">And then the rest of the box had a regular border"</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/70b3c74dfdde3506dd6de6d380e8465e/f9c6d48646d30e07-f5/s540x810/2b5da52c2d5021dabec2de024fa116f96c114a58.png" width="400">
+    
+      <p class="mt-5">Lastly, it had to scale adequately on iPad/smaller laptop screens, so once it reached a certain breaking point, it convert to this design and the background would remain static as the sides closed in:</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/65968eeec7f63bc51b534fbc14b5da31/01cc908ae40817a6-ec/s2048x3072/450b3798e66817911af595064cbe6ba6fb69ad68.png" width="500">
+    </div>
+    <!--video-->
+    <div class="grid-item col-10 border border-dark rounded p-3 m-3 coding">
+      <video class="w-100" playsinline autoplay loop muted>
+      <source src="https://va.media.tumblr.com/tumblr_qccj1hBKIl1tf0pv3_720.mp4" type="video/mp4">
+      </video>
+    </div>
+    
+    <div class="grid-item col-10 border border-dark rounded p-3 m-3 coding">
+      <video class="w-100" playsinline autoplay loop muted>
+      <source src="https://va.media.tumblr.com/tumblr_qcci9l1jqR1tf0pv3_720.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!--video-->
+
   </div>
+</div>
 
-  <div class="background">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
- </div>
+  
 
 </body>
+
+<script>
+// filter functions
+var filterFns = {
+  // show if number is greater than 50
+  numberGreaterThan50: function() {
+    var number = $(this).find('.number').text();
+    return parseInt( number, 10 ) > 50;
+  }
+
+};
+
+function getHashFilter() {
+  // get filter=filterName
+  var matches = location.hash.match( /filter=([^&]+)/i );
+  var hashFilter = matches && matches[1];
+  return hashFilter && decodeURIComponent( hashFilter );
+}
+
+// init Isotope
+var $grid = $('.grid');
+
+// bind filter button click
+var $filterButtonGroup = $('#filters');
+$filterButtonGroup.on( 'click', 'button', function() {
+  var filterAttr = $( this ).attr('data-filter');
+  // set filter in hash
+  location.hash = 'filter=' + encodeURIComponent( filterAttr );
+});
+
+var isIsotopeInit = false;
+
+function onHashchange() {
+  var hashFilter = getHashFilter();
+  if ( !hashFilter && isIsotopeInit ) {
+    return;
+  }
+  isIsotopeInit = true;
+
+  // filter isotope
+  $grid.isotope({
+    itemSelector: '.grid-item',
+    // use filterFns
+    filter: filterFns[ hashFilter ] || hashFilter,
+    masonry: {
+      isFitWidth: true
+    }
+  });
+  // set selected class on button
+  if ( hashFilter ) {
+    $filterButtonGroup.find('.is-checked').removeClass('is-checked');
+    $filterButtonGroup.find('[data-filter="' + hashFilter + '"]').addClass('is-checked');
+  }
+}
+
+$(window).on( 'hashchange', onHashchange );
+
+// trigger event handler to init Isotope
+onHashchange();
+
+// prevents images from overlapping
+$grid.imagesLoaded().progress(function () {
+    $grid.isotope('layout');
+  });
+
+  $(window).resize(function(){
+   $grid.isotope('reloadItems');
+});
+
+</script>
+
 </html>
