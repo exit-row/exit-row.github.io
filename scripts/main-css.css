@@ -4,12 +4,14 @@
       position: relative;
       background: #e8ebff;
     }
-
-    @import url('https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap');
+img {
+  max-width: 100%;
+}
 
     .name-title {
-    font-family: 'Philosopher', sans-serif;
+    font-family: 'Philosopher', serif;
     font-size: 48px;
+    font-weight: 700;
     }
 
     .scrolled-down {
@@ -138,11 +140,6 @@
       transition: all ease-in-out 0.6s;
     }
 
-    .coding {
-      width: 650px !important;
-      margin: 0 auto;
-    }
-
     .coding.grid-item:hover img {
       transform: unset !important;
       filter: unset !important;
@@ -193,10 +190,11 @@
         max-width: 350px;
       }
       .name-title {
-        font-size: 22px;
+        font-size: 30px;
+        padding: 50px 0px;
       }
       .grid-container {
-        margin-top: 0px;
+        margin-top: 50px;
       }
       
     }

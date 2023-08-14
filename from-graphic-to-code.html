@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><meta http-equiv="Content-Style-Type" content="text/css"/>
+  <title>Javier Gutierrez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="https://thedesignsofjavier.com/images/jg.svg">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://thedesignsofjavier.com/scripts/main-css.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="fixed-top navigation-bar">
+  <nav class="main-nav navbar navbar-expand-lg navbar-dark sticky-top pt-4 pb-4">
+    <div class="container">
+      <!--IT'S A ME-->
+      <a class="navbar-brand name-title" href="https://thedesignsofjavier.com">JAVIER GUTIERREZ</a>
+
+      <!--Links-->
+      <div id="navbarNav" class="collapse navbar-collapse justify-content-end d-none d-sm-block">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="https://thedesignsofjavier.com">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://thedesignsofjavier.com/about">ABOUT</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+<!--Filters-->
+  <div class="row d-none d-sm-block">
+    <div class="col-md-12 text-center">
+      <div id="filterss-2" class="btn-group" role="group">
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=*">Show All</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.graphics">Graphics</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.data-analytics">Data Analytics</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.illustration">Illustration</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.print">Print</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.photography">Photography</a>
+        <a class="btn btn-outline-dark" href="https://www.thedesignsofjavier.com/#filter=.coding">Coding</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="d-grid">
+  <button id="mobile-filters" type="button" role="group" class="btn btn-group btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="margin-top:88px">
+    Filters
+  </button>
+  <ul id="filters" role="group" class="dropdown-menu" aria-labelledby="mobile-filters">
+    <li><button type="button" class="btn dropdown-item is-checked" href="#all" onclick="topFunction()" data-filter="*">Show All</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#graphics" onclick="topFunction()" data-filter=".graphics">Graphics</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#data-analytics" onclick="topFunction()" data-filter=".data-analytics">Data Analytics</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#illustration" onclick="topFunction()" data-filter=".illustration">Illustration</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#print" onclick="topFunction()" data-filter=".print">Print</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#photography" onclick="topFunction()" data-filter=".photography">Photography</button></li>
+    <li><button type="button" class="btn dropdown-item" href="#coding" onclick="topFunction()" data-filter=".coding">Coding</button></li>
+  </ul>
+</div>
+-->
+
+
+<!--Grid-->
+<div class="grid-container">
+  <div class="grid col-sm-12">
+    <div class="grid-item col-8 border border-dark rounded p-3 m-3 coding" style="background: #fff;">
+      <h2>From Graphic to Code</h2>
+      <p>I had made the graphic below in Photoshop and in a moment of curiosity, I wonder if it was possible to
+        recreate the text/border portion with HTML/CSS.</p>
+      <img class="img-fluid"
+        src="https://64.media.tumblr.com/60582124579dc2c11f1c772339c6ef24/4b1abbfb2cfc1b6b-db/s2048x3072/b22b5a43f0a892b7164ea7f4ce757255fa1e8666.jpg">
+    
+      <p class="mt-4">Honestly this is probably how web developers feel when they receive an impractical design to implement, but it was a nice challenge for me. Keep in mind that Internet Explorer had not been killed off yet so it was a NIGHTMARE to design anything remotely creative and still be compatible with it.</p>
+      <div class="row">
+        <h5 class="mt-4 text-success">Result:</h5>
+    
+        <div class="col-6 col-10">
+          <img class="img-fluid"
+            src="https://64.media.tumblr.com/8ab112b3a080a67c4fb01794b12f160b/01cc908ae40817a6-68/s2048x3072/0c9e1142d2445c22d355b471cec39027ed163457.png">
+        </div><br>
+    
+        <div class="col-6 col-10">
+          <img class="img-fluid"
+            src="https://64.media.tumblr.com/ee630a8fd33cfdc0919d0f1bc20b2cd4/01cc908ae40817a6-1a/s2048x3072/938c2ca1d5544b7a1e31859e32853787a93ea81a.png">
+        </div>
+      </div>
+    
+      <p class="mt-4">For the top border I created a psuedo border using ::before and ::after</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/91a9581d715986145a8c55b467386842/f9c6d48646d30e07-0e/s1280x1920/549c99a86a04113aba3567875951352098a56f8f.png" width="400">
+    
+      <p class="mt-5">And then the rest of the box had a regular border"</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/70b3c74dfdde3506dd6de6d380e8465e/f9c6d48646d30e07-f5/s540x810/2b5da52c2d5021dabec2de024fa116f96c114a58.png" width="400">
+    
+      <p class="mt-5">Lastly, it had to scale adequately on iPad/smaller laptop screens, so once it reached a certain breaking point, it convert to this design and the background would remain static as the sides closed in:</p>
+      <img class="img-fluid" src="https://64.media.tumblr.com/65968eeec7f63bc51b534fbc14b5da31/01cc908ae40817a6-ec/s2048x3072/450b3798e66817911af595064cbe6ba6fb69ad68.png" width="500">
+    </div>
+
+  </div>
+</div>
+
+  
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+<script src="https://thedesignsofjavier.com/scripts/imagesloaded.pkgd.min.js"></script>
+<script src="https://thedesignsofjavier.com/scripts/isotope-layout@3.0.6_dist_isotope.pkgd.min.js"></script>
+<script src="https://thedesignsofjavier.com/scripts/main-js.js"></script>
+
+<script type="text/javascript">
+  var sc_project=6529697; 
+  var sc_invisible=1; 
+  var sc_security="909b9b5f"; 
+  </script>
+  <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async>
+</script>
+</html>
